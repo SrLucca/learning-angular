@@ -5,6 +5,9 @@ from django.http.response import JsonResponse
 
 from EmployeeApp.models import Departament, Employees
 from EmployeeApp.serializers import DepartamentSerializer, EmployeesSerializer
+
+from django.core.files.storage import default_storage
+
 # Create your views here.
 
 @csrf_exempt
@@ -66,3 +69,10 @@ def employeesApi(request, id=0):
         employees.delete()
         return JsonResponse("Deletado com Sucesso!!", safe=False)
         
+
+@csrf_exempt
+def saveFile(request):
+    file = request.FILES('uploadedFile')
+    fila_name = default_storage(file.name, file)
+
+    return JsonResponse(file_name, safe=False)
