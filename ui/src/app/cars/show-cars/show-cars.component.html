@@ -1,0 +1,20 @@
+<h3>Cars on Sale</h3>
+<ul>
+    <li *ngFor = "let car of carsList">
+        <h3>{{car.marca}}</h3>
+        <ul>
+            <li>
+                <h5>Modelo: {{car.modelo}}</h5>
+            </li>
+            <li>
+                <h5>Ano: {{car.ano}}</h5>
+            </li>
+            <li>
+                <h5>Dono anteriores: {{car.qtd_donos}}</h5>
+            </li>
+            <li>
+                <h5>Preço: {{car.preco}}</h5>
+            </li>
+        </ul>
+    </li>
+</ul>
